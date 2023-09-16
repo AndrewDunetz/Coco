@@ -63,11 +63,17 @@ function LessonContent() {
                 <LinearWithValueLabel progress={progress}/>
             </div>
             
+<<<<<<< HEAD
 
                 <div className="web-cam">
                     <WebcamStreamCapture val={val} setVal={setVal}>Webcam</WebcamStreamCapture>
                 </div>
                 <Button
+=======
+            <div className="grid-container">
+                <WebcamStreamCapture val={val} setVal={setVal}>Webcam</WebcamStreamCapture>
+                <Button 
+>>>>>>> 6452ecb88a694d4dfdc240869bdc02bbbe975615
                     className="next-button" 
                     onClick={increaseProgress}
                     disabled={val ? false : true}
