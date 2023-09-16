@@ -29,8 +29,8 @@ def upload():
     # print(classify(file))
     print(file)
     file.save(os.path.join(os.getcwd() + '/uploads', file.filename))
-    print(classify(os.getcwd() + '/uploads/blob'))
-    return {"answer": True}
+    prediction = classify(os.getcwd() + '/uploads/blob')
+    return {"prediction": prediction}
 
 # import gradio as gr
 import cv2

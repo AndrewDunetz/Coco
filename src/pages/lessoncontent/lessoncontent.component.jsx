@@ -26,7 +26,7 @@ function LessonContent() {
     });
 
     const [progress, setProgress] = useState(0)
-    const [val, setVal] = useState(false);
+    const [val, setVal] = useState("");
  
     // Using useEffect for single rendering
     useEffect(() => {
@@ -70,14 +70,13 @@ function LessonContent() {
                         className="next-button"
                         variant="contained" 
                         onClick={increaseProgress}
-                        disabled={val ? false : true}
+                        disabled={val === "hello" ? false : true}
                         >NEXT
                     </Button>
                 </div>
 
                 <BasicModal progress={progress}/>
 
-            <div>{data.name}</div>
         </div>
     );
   }

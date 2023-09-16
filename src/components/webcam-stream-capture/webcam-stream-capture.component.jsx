@@ -68,8 +68,8 @@ const WebcamStreamCapture = ({val, setVal}) => {
     
         try {
           axios.post("http://localhost:5002/upload", formData).then((res) => {
-            console.log(res.data.answer);
-            setVal(res.data.answer);
+            console.log(res.data.prediction);
+            setVal(res.data.prediction);
             setRecordedChunks([]);
           });
           alert("File uploaded successfully");
