@@ -7,6 +7,7 @@ import './App.css';
 
 import HomePage from './pages/homepage/homepage.component';
 import SignInAndSignUpPage from './pages/sign-in-and-sign-up/sign-in-and-sign-up.component';
+import ProgressPage from './pages/progesspage/progresspage.component';
 
 import Header from './components/header/header.component';
 
@@ -91,7 +92,7 @@ class App extends React.Component {
             element={
               !loading && this.props.currentUser ? (
                 <div>
-                  Progress
+                  <ProgressPage/>
                 </div>
               ) : (
                 null

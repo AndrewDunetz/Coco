@@ -1,0 +1,17 @@
+{
+    "lesson1": {
+        "lessons": ["Abc", "123", "Words", "Stuff"],
+        "complete": true,
+        "locked": false
+    },
+    "lesson2": {
+        "lessons": ["Greetings", "yay", "no"],
+        "complete": false,
+        "locked": false
+    },
+    "lesson3": {
+        "lessons": ["Phrases", "meow", "cheese"],
+        "complete": false,
+        "locked": true
+    }
+}
