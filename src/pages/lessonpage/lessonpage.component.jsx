@@ -6,6 +6,9 @@ import "./lessonpage.component.css"
 import data from "../../firebase/db.json"
 import Button from '@mui/material/Button';
 
+import done from "../../images/done.png";
+import lock from "../../images/lock.png";
+
 function LessonPage() {
     let { num } = useParams();
     let navigate = useNavigate();
@@ -18,11 +21,29 @@ function LessonPage() {
             </div>
             <div className="circle-grid">
                 {
-                    data[`lesson${num}`]["lessons"].map((lesson, idx) => (
-                        <Link className="lesson-links circle" to={lesson} key={idx}>
-                            <div>{lesson}</div>
+                    data[`lesson${num}`]["lessons"].map((lesson, idx) => 
+                        lesson.complete ?
+                        <div 
+                            className="lesson-links circle circle-complete"
+                            key={idx}
+                        >
+                            <img src={done} className="circle circle-complete"></img>
+                        </div> :
+                        lesson.locked ? 
+                        <div 
+                            className="lesson-links circle circle-locked"
+                            key={idx}
+                        >
+                            <img src={lock} className="circle circle-locked"></img>
+                        </div> : 
+                        <Link 
+                            className="lesson-links circle"
+                            to={lesson.name} 
+                            key={idx}
+                        >
+                            <div>{lesson.name}</div>
                         </Link>
-                    ))
+                    )
                 }
             </div>
         </div>

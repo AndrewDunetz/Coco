@@ -5,7 +5,17 @@
         "locked": false
     },
     "lesson2": {
-        "lessons": ["Greetings", "yay", "no"],
+        "lessons": [
+            {"name": "Greetings",
+             "complete": true,
+             "locked": false}, 
+            {"name": "yay",
+             "complete": false,
+             "locked": false}, 
+            {"name": "no",
+             "complete": false,
+             "locked": true}
+        ],
         "complete": false,
         "locked": false
     },
