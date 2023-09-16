@@ -28,8 +28,8 @@ def upload():
     file = request.files['file']
     # print(classify(file))
     print(file)
-    file.save(os.path.join('/Users/andrewdunetz/Development/coco/uploads', file.filename))
-    print(classify('/Users/andrewdunetz/Development/coco/uploads/blob'))
+    file.save(os.path.join(os.getcwd() + '/uploads', file.filename))
+    print(classify(os.getcwd() + '/uploads/blob'))
     return {"answer": True}
 
 # import gradio as gr
