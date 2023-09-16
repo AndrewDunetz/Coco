@@ -6,7 +6,7 @@ import axios from "axios";
 
 import "./webcam-stream-capture.component.css"
 
-const WebcamStreamCapture = () => {
+const WebcamStreamCapture = ({val, setVal}) => {
     const webcamRef = React.useRef(null);
     const mediaRecorderRef = React.useRef(null);
     const [capturing, setCapturing] = React.useState(false);
@@ -54,8 +54,6 @@ const WebcamStreamCapture = () => {
         setRecordedChunks([]);
       }
     }, [recordedChunks]);
-
-    const [val, setVal] = useState("Upload image to predict");
 
     const handleSubmit = async (event) => {
         event.preventDefault();

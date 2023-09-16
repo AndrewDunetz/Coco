@@ -25,6 +25,7 @@ function LessonContent() {
     });
 
     const [progress, setProgress] = useState(0)
+    const [val, setVal] = useState(false);
  
     // Using useEffect for single rendering
     useEffect(() => {
@@ -43,12 +44,12 @@ function LessonContent() {
         );
     }, []);
 
-    const decreaseProgress = () => {
-        setProgress(progress-20);
-      };
-      const increaseProgress = () => {
-        setProgress(progress+20);
-      };
+    const increaseProgress = () => {
+        if (val) {
+            setProgress(progress+20);
+        }
+        setVal(false)
+    };
 
     return (
         <div>
@@ -60,9 +61,19 @@ function LessonContent() {
             <LinearWithValueLabel progress={progress}/>
             
             <div class="grid-container">
-                <Button className="back-button" onClick={decreaseProgress}>Button 1</Button>
-                <WebcamStreamCapture>Webcam</WebcamStreamCapture>
-                <Button className="next-button" onClick={increaseProgress}>Button 2</Button>
+                <WebcamStreamCapture val={val} setVal={setVal}>Webcam</WebcamStreamCapture>
+                <Button 
+                    className="next-button" 
+                    onClick={increaseProgress}
+                    disabled={val ? false : true}
+                    >Button 2
+                </Button>
+                <Button
+                    className="complete-button"
+                    onClick={() => navigate(-1)}
+                    disabled={progress === 100 ? false : true}
+                    >Complete
+                </Button>
             </div>
             <div>{data.name}</div>
         </div>

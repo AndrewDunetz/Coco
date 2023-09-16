@@ -24,7 +24,7 @@ def get_time():
 
 @app.route("/upload", methods=['POST'])
 def upload():
-    return {"answer": "True"}
+    return {"answer": True}
      
 # Running app
 if __name__ == '__main__':
