@@ -9,6 +9,7 @@ import HomePage from './pages/homepage/homepage.component';
 import SignInAndSignUpPage from './pages/sign-in-and-sign-up/sign-in-and-sign-up.component';
 import ProgressPage from './pages/progesspage/progresspage.component';
 import LessonPage from './pages/lessonpage/lessonpage.component';
+import LessonContent from './pages/lessoncontent/lessoncontent.component';
 
 import Header from './components/header/header.component';
 
@@ -107,6 +108,19 @@ class App extends React.Component {
               !loading && this.props.currentUser ? (
                 <div>
                   <LessonPage />
+                </div>
+              ) : (
+                null
+              )
+            }
+          />
+          <Route 
+            exact 
+            path='/lesson/:num/:lesson' 
+            element={
+              !loading && this.props.currentUser ? (
+                <div>
+                  <LessonContent />
                 </div>
               ) : (
                 null
