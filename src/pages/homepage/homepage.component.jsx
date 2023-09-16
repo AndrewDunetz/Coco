@@ -7,8 +7,8 @@ import { Button } from '@mui/material';
 
 const HomePage = () => (
   <HomePageContainer>
-    <section class="hero-image">
-      <h1 class="welcome-text">
+    <section className="hero-image">
+      <h1 className="welcome-text">
         <div>Welcome to ASLingo!</div>
       </h1>
       <Button className="cta-button button" variant='contained'>Start Learning!</Button>

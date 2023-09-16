@@ -43,11 +43,13 @@ export default function BasicCard({ lessonNumber, imageSource }) {
       <img src={imageSource} alt="abc" className="card-image" />
       <CardActions>
         <ThemeProvider theme={theme}>
-            <Button variant="contained" disabled={
+            <Link className="start-link" to={`/lesson/${lessonNumber}`}>
+              <Button variant="contained" className='start-link' disabled={
                                                   data[`lesson${lessonNumber}`].complete 
                                                   || data[`lesson${lessonNumber}`].locked ? true : null}>
-                <Link className="start-link" to={`/lesson/${lessonNumber}`}>Start</Link>
-            </Button>
+                Start
+              </Button>
+            </Link>
         </ThemeProvider>
       </CardActions>
     </Card>
