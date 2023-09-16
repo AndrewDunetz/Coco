@@ -6,6 +6,7 @@ import WebcamStreamCapture from "../../components/webcam-stream-capture/webcam-s
 import "./lessoncontent.styles.css"
 // import data from "../../firebase/db.json";
 import Button from '@mui/material/Button';
+import BasicModal from "../../components/modal/modal.component";
 import axios from "axios";
 
 import LinearWithValueLabel from "../../components/progress-bar.component/progress-bar.component";
@@ -58,15 +59,19 @@ function LessonContent() {
                 <Button variant="outlined" onClick={() => navigate(-1)}>Back</Button>
             </div>
 
-            <LinearWithValueLabel progress={progress}/>
+            <div className="progress-bar">
+                <LinearWithValueLabel progress={progress}/>
+            </div>
             
-            <div class="grid-container">
-                <WebcamStreamCapture val={val} setVal={setVal}>Webcam</WebcamStreamCapture>
-                <Button 
+
+                <div className="web-cam">
+                    <WebcamStreamCapture val={val} setVal={setVal}>Webcam</WebcamStreamCapture>
+                </div>
+                <Button
                     className="next-button" 
                     onClick={increaseProgress}
                     disabled={val ? false : true}
-                    >Button 2
+                    >NEXT
                 </Button>
                 <Button
                     className="complete-button"
@@ -74,7 +79,9 @@ function LessonContent() {
                     disabled={progress === 100 ? false : true}
                     >Complete
                 </Button>
-            </div>
+
+                <BasicModal progress={progress}/>
+
             <div>{data.name}</div>
         </div>
     );

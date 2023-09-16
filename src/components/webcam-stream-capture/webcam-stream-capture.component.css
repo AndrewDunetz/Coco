@@ -1,4 +1,33 @@
-/* Button {
-    grid-row: 2;
-    grid-column: 2;
-} */
+/* webcam-stream-capture.component.css */
+
+.webcam-container {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center horizontally */
+    text-align: center; /* Center button text */
+  
+    /* Add any additional styles you want for the container */
+  }
+  
+  .capture-button-container {
+    margin-top: 10px; /* Add space between image and button */
+  
+    /* Add any additional styles you want for the button container */
+  }
+  
+  /* Style for the "Start Capture" button */
+  /* button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  } */
+  
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+  

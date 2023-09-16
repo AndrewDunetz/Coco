@@ -1,17 +1,16 @@
-.grid-container {
+/* .grid-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Three equal-width columns */
-    gap: 20px; /* Adjust the space between elements as needed */
-    justify-content: space-between; /* Distribute items evenly along the row axis */
-    align-items: center; /* Center items vertically within the grid cells */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    justify-content: space-between;
+    align-items: center;
   }
-  
-  /* Style for Button and WebcamStreamCapture elements (adjust as needed) */
-  Button, WebcamStreamCapture {
-    padding: 10px;
-    border: 1px solid #ccc;
-    text-align: center;
-  }
+
+Button, WebcamStreamCapture {
+  padding: 10px;
+  border: 1px solid #ccc;
+  text-align: center;
+}
 
 .back-button {
     grid-row: 1;
@@ -21,4 +20,76 @@
 .next-button {
     grid-row: 1;
     grid-column: 3;
+} */
+
+.progress-bar {
+  margin-bottom: 10px;
+}
+
+/* lessoncontent.styles.css */
+
+.lesson-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.lesson-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.progress-bar {
+  margin-bottom: 20px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.web-cam {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.grid-container:nth-child(1) {
+  width: 75%;
+}
+
+.next-button {
+  justify-content: center;
+}
+
+.next-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.complete-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  background-color: #1ed55e;
+  color: #fff;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.next-button:disabled, .complete-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
 }

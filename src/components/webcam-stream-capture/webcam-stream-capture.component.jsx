@@ -76,16 +76,46 @@ const WebcamStreamCapture = ({val, setVal}) => {
   
     return (
       <>
+      <div className="webcam-container">
         <Webcam audio={false} ref={webcamRef} />
         {capturing ? (
-          <button onClick={handleStopCaptureClick}>Stop Capture</button>
+          <div className="start-capture">
+            <button onClick={handleStopCaptureClick} style={{
+              padding: "10px 20px",
+              fontsize: "16",
+              border: "1px solid #ccc",
+              background: "rgb(224, 88, 88)",
+              color: "#fff",
+              cursor: "pointer",
+              transition: "background-color 0.3s ease",
+            }}>Stop Capture</button>
+          </div>
         ) : (
-          <button onClick={handleStartCaptureClick}>Start Capture</button>
+          <button onClick={handleStartCaptureClick} style={{
+            padding: "10px 20px",
+            fontsize: "16",
+            border: "1px solid #ccc",
+            background: "#007bff",
+            color: "#fff",
+            cursor: "pointer",
+            transition: "background-color 0.3s ease",
+          }}>Start Capture</button>
         )}
-        {recordedChunks.length > 0 && (
-          <button onClick={handleSubmit}>Download</button>
-        )}
+        <div className="upload-button">
+          {recordedChunks.length > 0 && (
+            <button onClick={handleSubmit} style={{
+              padding: "10px 20px",
+              fontsize: "16",
+              border: "1px solid #ccc",
+              background: "#1caf3a",
+              color: "#fff",
+              cursor: "pointer",
+              transition: "background-color 0.3s ease",
+            }}>Upload</button>
+          )}
+        </div>
         <div>{val}</div>
+        </div>
       </>
     );
 };
