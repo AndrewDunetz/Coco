@@ -3,6 +3,7 @@ import React, {useState} from "react";
 import Webcam from "react-webcam";
 
 import axios from "axios";
+import Button from '@mui/material/Button';
 
 import "./webcam-stream-capture.component.css"
 
@@ -80,38 +81,14 @@ const WebcamStreamCapture = ({val, setVal}) => {
         <Webcam audio={false} ref={webcamRef} />
         {capturing ? (
           <div className="start-capture">
-            <button onClick={handleStopCaptureClick} style={{
-              padding: "10px 20px",
-              fontsize: "16",
-              border: "1px solid #ccc",
-              background: "rgb(224, 88, 88)",
-              color: "#fff",
-              cursor: "pointer",
-              transition: "background-color 0.3s ease",
-            }}>Stop Capture</button>
+            <Button className="stop-capture-button" variant="contained" onClick={handleStopCaptureClick}>Stop Capture</Button>
           </div>
         ) : (
-          <button onClick={handleStartCaptureClick} style={{
-            padding: "10px 20px",
-            fontsize: "16",
-            border: "1px solid #ccc",
-            background: "#007bff",
-            color: "#fff",
-            cursor: "pointer",
-            transition: "background-color 0.3s ease",
-          }}>Start Capture</button>
+          <Button className="start-capture-button" variant="contained" onClick={handleStartCaptureClick}>Start Capture</Button>
         )}
         <div className="upload-button">
           {recordedChunks.length > 0 && (
-            <button onClick={handleSubmit} style={{
-              padding: "10px 20px",
-              fontsize: "16",
-              border: "1px solid #ccc",
-              background: "#1caf3a",
-              color: "#fff",
-              cursor: "pointer",
-              transition: "background-color 0.3s ease",
-            }}>Upload</button>
+            <Button className="upload-button" variant="contained" onClick={handleSubmit}>Upload</Button>
           )}
         </div>
         <div>{val}</div>

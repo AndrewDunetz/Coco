@@ -66,13 +66,14 @@ function LessonContent() {
 
                 <div className="web-cam">
                     <WebcamStreamCapture val={val} setVal={setVal}>Webcam</WebcamStreamCapture>
+                    <Button
+                        className="next-button"
+                        variant="contained" 
+                        onClick={increaseProgress}
+                        disabled={val ? false : true}
+                        >NEXT
+                    </Button>
                 </div>
-                <Button
-                    className="next-button" 
-                    onClick={increaseProgress}
-                    disabled={val ? false : true}
-                    >NEXT
-                </Button>
 
                 <BasicModal progress={progress}/>
 
