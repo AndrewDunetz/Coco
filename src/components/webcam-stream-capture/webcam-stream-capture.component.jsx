@@ -58,9 +58,13 @@ const WebcamStreamCapture = ({val, setVal}) => {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
+
+        const blob = new Blob(recordedChunks, {
+          type: "video/webm"
+        });
     
         const formData = new FormData();
-        // formData.append("file", file);
+        formData.append("file", blob);
     
         try {
           axios.post("http://localhost:5002/upload", formData).then((res) => {
