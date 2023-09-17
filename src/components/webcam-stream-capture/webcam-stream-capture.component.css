@@ -8,6 +8,11 @@
   
     /* Add any additional styles you want for the container */
   }
+
+.webcam-container > * {
+  /* margin-top: 20px; */
+  margin-bottom: 30px;
+}
   
   .capture-button-container {
     margin-top: 10px; /* Add space between image and button */
@@ -31,7 +36,8 @@
 }
 
 .upload-button {
-    background-color: #1caf3a !important;
+  margin-top: 20px;
+  background-color: #1caf3a !important;
 }
   
 button:disabled {

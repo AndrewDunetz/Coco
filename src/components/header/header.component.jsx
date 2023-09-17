@@ -10,7 +10,7 @@ import { HeaderContainer, OptionsContainer, OptionLink, TitleContainer, Title } 
 const Header = ({ currentUser }) => (
   <HeaderContainer>
     <TitleContainer to="/">
-      <Title>ASLingo</Title>
+      <Title>Koko</Title>
     </TitleContainer>
     <OptionsContainer>
       <OptionLink to='/contact'>

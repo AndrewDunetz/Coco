@@ -9,6 +9,12 @@ import Button from '@mui/material/Button';
 import BasicModal from "../../components/modal/modal.component";
 import axios from "axios";
 
+import hello from '../../videos/hello.mp4';
+import how from '../../videos/how.mp4';
+import please from '../../videos/please.mp4';
+import thankyou from '../../videos/thankyou.mp4';
+import you from '../../videos/you.mp4';
+
 import LinearWithValueLabel from "../../components/progress-bar.component/progress-bar.component";
 
 function LessonContent() {
@@ -26,10 +32,17 @@ function LessonContent() {
     });
 
     const wordsArray = ["hello", "you", "how", "thankyou", "please"];
+    const videoHash = {"hello": hello,
+                        "you": you,
+                        "how": how,
+                        "thankyou": thankyou,
+                        "please": please
+                        };
 
     const [progress, setProgress] = useState(0)
     const [val, setVal] = useState("");
     const [index, setIndex] = useState(0);
+    const [video, setVideo] = useState(hello);
 
     const [currentWord, setWord] = useState(wordsArray[index]);
  
@@ -57,7 +70,8 @@ function LessonContent() {
             var newIndex = index + 1
             setProgress(progress+20);
             setIndex(newIndex);
-            setWord(wordsArray[newIndex])
+            setWord(wordsArray[newIndex]);
+            setVideo(videoHash[wordsArray[newIndex]]);
         }
         setVal("")
     };
@@ -77,10 +91,21 @@ function LessonContent() {
                 <LinearWithValueLabel progress={progress}/>
             </div>
 
-            <h2>{currentWord}</h2>
+            <h2 className="sign">Sign: {currentWord}</h2>
             
 
                 <div className="web-cam">
+                    <div>
+                        <h2>Tutorial</h2>
+                        <video width="300px" height="300px" controls="controls">
+                            {/* {currentWord === 'hello' && (<source src={hello} type="video/mp4" />)}
+                            {currentWord === 'you' && (<source src={you} type="video/mp4" />)}
+                            {currentWord === 'please' && (<source src={please} type="video/mp4" />)}
+                            {currentWord === 'thankyou' && (<source src={thankyou} type="video/mp4" />)}
+                            {currentWord === 'how' && (<source src={how} type="video/mp4" />)} */}
+                            <source src={video} type="video/mp4" />
+                        </video>
+                    </div>
                     <WebcamStreamCapture val={val} setVal={setVal}>Webcam</WebcamStreamCapture>
                     <Button
                         className="next-button"

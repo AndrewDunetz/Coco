@@ -136,7 +136,7 @@ class App extends React.Component {
           <Link className='footer__list--item' to='/terms'>Terms</Link>
         </div>
         <div className="footer__copyright">
-            Copyright &copy; ASLingo 2023.
+            Copyright &copy; Koko 2023.
         </div>
       </footer>
       </div>

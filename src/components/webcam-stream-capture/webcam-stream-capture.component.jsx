@@ -4,6 +4,7 @@ import Webcam from "react-webcam";
 
 import axios from "axios";
 import Button from '@mui/material/Button';
+import { CircularProgress } from "@mui/material";
 
 import "./webcam-stream-capture.component.css"
 
@@ -12,6 +13,7 @@ const WebcamStreamCapture = ({val, setVal}) => {
     const mediaRecorderRef = React.useRef(null);
     const [capturing, setCapturing] = React.useState(false);
     const [recordedChunks, setRecordedChunks] = React.useState([]);
+    const [loading, setLoading] = React.useState(false);
   
     const handleStartCaptureClick = React.useCallback(() => {
       setCapturing(true);
@@ -58,6 +60,7 @@ const WebcamStreamCapture = ({val, setVal}) => {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
+        setLoading(true);
 
         const blob = new Blob(recordedChunks, {
           type: "video/webm"
@@ -72,11 +75,11 @@ const WebcamStreamCapture = ({val, setVal}) => {
             setVal(res.data.prediction);
             setRecordedChunks([]);
           });
-          alert("File uploaded successfully");
+          // alert("File uploaded successfully");
         } catch (error) {
           console.error(error);
         }
-    
+        setLoading(false);
     };
   
     return (
@@ -85,7 +88,7 @@ const WebcamStreamCapture = ({val, setVal}) => {
         <Webcam audio={false} ref={webcamRef} />
         {capturing ? (
           <div className="start-capture">
-            <Button className="stop-capture-button" variant="contained" onClick={handleStopCaptureClick}>Stop Capture</Button>
+            <Button className="stop-capture-button" variant="contained" onClick={handleStopCaptureClick}>Submit</Button>
           </div>
         ) : (
           <Button className="start-capture-button" variant="contained" onClick={handleStartCaptureClick}>Start Capture</Button>
@@ -95,7 +98,10 @@ const WebcamStreamCapture = ({val, setVal}) => {
             <Button className="upload-button" variant="contained" onClick={handleSubmit}>Upload</Button>
           )}
         </div>
-        <div>{val}</div>
+        {
+          loading && (<CircularProgress />)
+        }
+        <div>What you signed: {val}</div>
         </div>
       </>
     );

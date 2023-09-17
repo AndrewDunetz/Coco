@@ -9,9 +9,9 @@ const HomePage = () => (
   <HomePageContainer>
     <section className="hero-image">
       <h1 className="welcome-text">
-        <div>Welcome to ASLingo!</div>
+        <div>Welcome to Koko!</div>
       </h1>
-      <Button className="cta-button button" variant='contained'>Start Learning!</Button>
+      <Button href="/signin" className="cta-button button" variant='contained' to='/signin'>Start Learning!</Button>
     </section>
   </HomePageContainer>
 );

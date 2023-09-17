@@ -63,7 +63,7 @@ Button, WebcamStreamCapture {
   width: 75%;
 }
 
-.next-button {
+/* .next-button {
   padding: 10px 20px;
   font-size: 16px;
   border: 1px solid #ccc;
@@ -73,7 +73,7 @@ Button, WebcamStreamCapture {
   text-align: center;
   margin-left: 200px !important;
   transition: background-color 0.3s ease;
-}
+} */
 
 .complete-button {
   padding: 10px 20px;
@@ -91,7 +91,7 @@ Button, WebcamStreamCapture {
   cursor: not-allowed;
 }
 
-h2 {
+h2.sign {
   background-color: aquamarine;
   padding: 10px 20px;
   text-align: center;
