@@ -8,7 +8,7 @@ import { CircularProgress } from "@mui/material";
 
 import "./webcam-stream-capture.component.css"
 
-const WebcamStreamCapture = ({val, setVal}) => {
+const WebcamStreamCapture = ({val, setVal, currentWord}) => {
     const webcamRef = React.useRef(null);
     const mediaRecorderRef = React.useRef(null);
     const [capturing, setCapturing] = React.useState(false);
@@ -102,6 +102,7 @@ const WebcamStreamCapture = ({val, setVal}) => {
           loading && (<CircularProgress />)
         }
         <div>What you signed: {val}</div>
+        { val !== currentWord && val !== "" && (<div>Try Again</div>)}
         </div>
       </>
     );

@@ -142,7 +142,7 @@ function LessonContent() {
                             <source src={please} type="video/mp4" />
                         </video>
                     </div>
-                    <WebcamStreamCapture val={val} setVal={setVal}>Webcam</WebcamStreamCapture>
+                    <WebcamStreamCapture val={val} setVal={setVal} currentWord={currentWord}>Webcam</WebcamStreamCapture>
                     <div className="skip">
                         <Button
                             className="next-button"
