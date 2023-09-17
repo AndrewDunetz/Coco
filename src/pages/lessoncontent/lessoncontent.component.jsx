@@ -25,8 +25,13 @@ function LessonContent() {
         programming: "",
     });
 
+    const wordsArray = ["hello", "you", "how", "thankyou", "please"];
+
     const [progress, setProgress] = useState(0)
     const [val, setVal] = useState("");
+    const [index, setIndex] = useState(0);
+
+    const [currentWord, setWord] = useState(wordsArray[index]);
  
     // Using useEffect for single rendering
     useEffect(() => {
@@ -46,11 +51,20 @@ function LessonContent() {
     }, []);
 
     const increaseProgress = () => {
-        if (val) {
+        console.log(val);
+        console.log(currentWord);
+        if (val === currentWord) {
+            var newIndex = index + 1
             setProgress(progress+20);
+            setIndex(newIndex);
+            setWord(wordsArray[newIndex])
         }
-        setVal(false)
+        setVal("")
     };
+
+    // Array of all the 5 words
+    // Make it display the current word
+    // Also make sure current word is the one being tested on
 
     return (
         <div>
@@ -62,6 +76,8 @@ function LessonContent() {
             <div className="progress-bar">
                 <LinearWithValueLabel progress={progress}/>
             </div>
+
+            <h2>{currentWord}</h2>
             
 
                 <div className="web-cam">
@@ -70,7 +86,7 @@ function LessonContent() {
                         className="next-button"
                         variant="contained" 
                         onClick={increaseProgress}
-                        disabled={val === "hello" ? false : true}
+                        disabled={val === currentWord ? false : true}
                         >NEXT
                     </Button>
                 </div>

@@ -90,3 +90,9 @@ Button, WebcamStreamCapture {
   background-color: #ccc;
   cursor: not-allowed;
 }
+
+h2 {
+  background-color: aquamarine;
+  padding: 10px 20px;
+  text-align: center;
+}

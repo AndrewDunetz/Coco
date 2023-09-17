@@ -40,7 +40,7 @@ import tensorflow as tf
 
 mp_holistic = mp.solutions.holistic
 model = tf.keras.models.load_model('action.h5')
-actions = np.array(['hello','goodbye','thankyou','please','how','man','woman','boy','girl','me', 'you','yes','no','good','bad'])
+actions = np.array(['hello','you','thankyou','please','how'])
 # Assuming the following functions are defined in your code:
 # mediapipe_detection, draw_styled_landmarks, extract_keypoints, prob_viz
 def mediapipe_detection(image, model):
