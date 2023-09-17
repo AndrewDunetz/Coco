@@ -76,6 +76,17 @@ function LessonContent() {
         setVal("")
     };
 
+    const skip = () => {
+        console.log(val);
+        console.log(currentWord);
+        var newIndex = index + 1
+        setProgress(progress+20);
+        setIndex(newIndex);
+        setWord(wordsArray[newIndex]);
+        setVideo(videoHash[wordsArray[newIndex]]);
+        setVal("")
+    };
+
     // Array of all the 5 words
     // Make it display the current word
     // Also make sure current word is the one being tested on
@@ -107,13 +118,21 @@ function LessonContent() {
                         </video>
                     </div>
                     <WebcamStreamCapture val={val} setVal={setVal}>Webcam</WebcamStreamCapture>
-                    <Button
-                        className="next-button"
-                        variant="contained" 
-                        onClick={increaseProgress}
-                        disabled={val === currentWord ? false : true}
-                        >NEXT
-                    </Button>
+                    <div className="skip">
+                        <Button
+                            className="next-button"
+                            variant="contained" 
+                            onClick={increaseProgress}
+                            disabled={val === currentWord ? false : true}
+                            >NEXT
+                        </Button>
+                        <Button
+                            className="skip-button"
+                            variant="contained" 
+                            onClick={skip}
+                            >SKIP
+                        </Button>
+                    </div>
                 </div>
 
                 <BasicModal progress={progress}/>

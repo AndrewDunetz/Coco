@@ -88,7 +88,7 @@ const WebcamStreamCapture = ({val, setVal}) => {
         <Webcam audio={false} ref={webcamRef} />
         {capturing ? (
           <div className="start-capture">
-            <Button className="stop-capture-button" variant="contained" onClick={handleStopCaptureClick}>Submit</Button>
+            <Button className="stop-capture-button" variant="contained" onClick={handleStopCaptureClick}>Stop Capture</Button>
           </div>
         ) : (
           <Button className="start-capture-button" variant="contained" onClick={handleStartCaptureClick}>Start Capture</Button>

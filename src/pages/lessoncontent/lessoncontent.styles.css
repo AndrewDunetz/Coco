@@ -55,7 +55,7 @@ Button, WebcamStreamCapture {
 
 .web-cam {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
 }
 
@@ -95,4 +95,13 @@ h2.sign {
   background-color: aquamarine;
   padding: 10px 20px;
   text-align: center;
+}
+
+.skip {
+  display: flex;
+  flex-direction: column;
+}
+
+.skip-button {
+  margin-top: 20px !important;
 }
