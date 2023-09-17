@@ -9,11 +9,15 @@ import Button from '@mui/material/Button';
 import BasicModal from "../../components/modal/modal.component";
 import axios from "axios";
 
+import useWindowSize from 'react-use/lib/useWindowSize'
+
 import hello from '../../videos/hello.mp4';
 import how from '../../videos/how.mp4';
 import please from '../../videos/please.mp4';
 import thankyou from '../../videos/thankyou.mp4';
 import you from '../../videos/you.mp4';
+
+import Confetti from 'react-confetti'
 
 import LinearWithValueLabel from "../../components/progress-bar.component/progress-bar.component";
 
@@ -44,7 +48,11 @@ function LessonContent() {
     const [index, setIndex] = useState(0);
     const [video, setVideo] = useState(hello);
 
+    const [showConfetti, setShowConfetti] = useState(false);
+
     const [currentWord, setWord] = useState(wordsArray[index]);
+
+    const { width, height } = useWindowSize()
  
     // Using useEffect for single rendering
     useEffect(() => {
@@ -72,6 +80,11 @@ function LessonContent() {
             setIndex(newIndex);
             setWord(wordsArray[newIndex]);
             setVideo(videoHash[wordsArray[newIndex]]);
+            setShowConfetti(true);
+            setTimeout(() => {
+                console.log("Delayed for 2 second.");
+              }, "2000");
+            setShowConfetti(false);
         }
         setVal("")
     };
@@ -148,7 +161,10 @@ function LessonContent() {
                 </div>
 
                 <BasicModal progress={progress}/>
-
+                { val === currentWord && (<Confetti
+                    width={width}
+                    height={height}
+                />)}
         </div>
     );
   }
