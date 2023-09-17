@@ -108,13 +108,25 @@ function LessonContent() {
                 <div className="web-cam">
                     <div>
                         <h2>Tutorial</h2>
-                        <video width="300px" height="300px" controls="controls">
+                        <video width="300px" height="300px" controls="controls" style={{display: currentWord !== "hello" ? "none" : null}}>
                             {/* {currentWord === 'hello' && (<source src={hello} type="video/mp4" />)}
                             {currentWord === 'you' && (<source src={you} type="video/mp4" />)}
                             {currentWord === 'please' && (<source src={please} type="video/mp4" />)}
                             {currentWord === 'thankyou' && (<source src={thankyou} type="video/mp4" />)}
                             {currentWord === 'how' && (<source src={how} type="video/mp4" />)} */}
-                            <source src={video} type="video/mp4" />
+                            <source src={hello} type="video/mp4" />
+                        </video>
+                        <video width="300px" height="300px" controls="controls" style={{display: currentWord !== "you" ? "none" : null}}>
+                            <source src={you} type="video/mp4" />
+                        </video>
+                        <video width="300px" height="300px" controls="controls" style={{display: currentWord !== "how" ? "none" : null}}>
+                            <source src={how} type="video/mp4" />
+                        </video>
+                        <video width="300px" height="300px" controls="controls" style={{display: currentWord !== "thankyou" ? "none" : null}}>
+                            <source src={thankyou} type="video/mp4" />
+                        </video>
+                        <video width="300px" height="300px" controls="controls" style={{display: currentWord !== "please" ? "none" : null}}>
+                            <source src={please} type="video/mp4" />
                         </video>
                     </div>
                     <WebcamStreamCapture val={val} setVal={setVal}>Webcam</WebcamStreamCapture>
