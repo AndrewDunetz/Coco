@@ -9,18 +9,21 @@ export const HeaderContainer = styled.div`
     margin-bottom: 25px;
 `;
 
-export const LogoContainer = styled(Link)`
+export const LogoContainer = styled.div`
     height: 100%;
     width: 70px;
     padding: 25px;
+    position: absolute:
 `;
 
 export const TitleContainer = styled(Link)`
+    display: flex;
 `;
 
 export const Title = styled.div`
     font-size: 50px;
     font-weight: 600;
+    margin-left: 30px;
 `;
 
 export const OptionsContainer = styled.div`

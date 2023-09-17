@@ -5,6 +5,8 @@ import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import { useNavigate } from "react-router-dom";
 
+import data from '../../firebase/db.json';
+
 const style = {
   position: 'absolute',
   top: '50%',
@@ -26,6 +28,11 @@ export default function BasicModal({progress}) {
     // if (progress === 100) {
     //     handleOpen()
     // }
+  const completeLesson = () => {
+    data.lesson2.lessons[2].locked = false;
+    data.lesson2.lessons[1].complete = true;
+    navigate(-1);
+  }
 
   return (
     <div>
@@ -45,7 +52,7 @@ export default function BasicModal({progress}) {
           </Typography>
             <Button
                 className="complete-button"
-                onClick={() => navigate(-1)}
+                onClick={completeLesson}
                 disabled={progress === 100 ? false : true}
                 >Complete
             </Button>
