@@ -163,7 +163,7 @@ function LessonContent() {
                 <BasicModal progress={progress}/>
                 { val === currentWord && (<Confetti
                     width={width}
-                    height={height}
+                    height={height + 400}
                 />)}
         </div>
     );
